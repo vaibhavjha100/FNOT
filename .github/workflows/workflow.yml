@@ -27,7 +27,7 @@ jobs:
     - name: Install poetry
       run: |
         curl -sSL https://install.python-poetry.org | python -
-        export PATH=$Home/.local/bin:$PATH
+        $env:PATH += ";$env:USERPROFILE\.local\bin"
     
     - name: Install dependencies using poetry
       run: poetry run make install
