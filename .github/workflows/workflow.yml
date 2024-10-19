@@ -25,12 +25,8 @@ jobs:
         python-version: '3.12.2'
     
     - name: Install poetry
-      run: |
-        curl -sSL https://install.python-poetry.org | python -
-        $env:PATH += ";$env:USERPROFILE\.local\bin"
-        poetry --version
+      run: curl -sSL https://install.python-poetry.org | python -
+      
     
     - name: Install dependencies using poetry
-      run: |
-        $env:PATH += ";$env:USERPROFILE\.local\bin"
-        poetry run make install
+      run: poetry run make install
