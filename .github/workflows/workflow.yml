@@ -28,6 +28,9 @@ jobs:
       run: |
         curl -sSL https://install.python-poetry.org | python -
         $env:PATH += ";$env:USERPROFILE\.local\bin"
+        poetry --version
     
     - name: Install dependencies using poetry
-      run: poetry run make install
+      run: |
+        $env:PATH += ";$env:USERPROFILE\.local\bin"
+        poetry run make install
