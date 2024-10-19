@@ -29,4 +29,4 @@ jobs:
       
     
     - name: Install dependencies using poetry
-      run: poetry run make install
+      run:  C:\Users\runneradmin\AppData\Roaming\Python\Scripts\poetry install
