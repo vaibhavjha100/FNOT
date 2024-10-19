@@ -3,7 +3,7 @@ name: App Workflow
 on:
   push:
     branches: ["main"]
-  pull:
+  pull_request:
     branches: ["main"]
 
 permissions:
