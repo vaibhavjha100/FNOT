@@ -1,0 +1,33 @@
+name: App Workflow
+
+on:
+  push:
+    branches: ["main"]
+  pull:
+    branches: ["main"]
+
+permissions:
+  contents: read
+
+jobs:
+  
+  build:
+    runs-on: windows-latest
+    
+    steps:
+    - name: Checkout repository
+      #run: git clone https://github.com/vaibhavjha100/FNOT.git . 
+      uses: actions/checkout@v4
+    
+    - name: Set up Python
+      uses: actions/setup-python@v5
+      with: 
+        python-version: '3.12.2'
+    
+    - name: Install poetry
+      run: |
+        curl -sSL https://install.python-poetry.org | python -
+        export PATH=$Home/.local/bin:$PATH
+    
+    - name: Install dependencies using poetry
+      run: poetry run make install
