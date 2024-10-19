@@ -1,0 +1,25 @@
+[tool.poetry]
+name = "fnot"
+version = "0.1.0"
+description = ""
+authors = ["Your Name <you@example.com>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = ">=3.9,<3.13"
+joblib = "^1.4.2"
+yfinance = "^0.2.44"
+pandas = "^2.2.3"
+numpy = ">=1.23.5,<2.0.0"
+scikit-learn = "^1.5.2"
+pandas-market-calendars = "^4.4.1"
+keras-tuner = "^1.4.7"
+tensorflow = "2.16.0rc0"
+pydantic = "^2.9.2"
+pydantic-settings = "^2.5.2"
+loguru = "^0.7.2"
+wemake-python-styleguide = "^0.19.2"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
