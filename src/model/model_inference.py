@@ -1,7 +1,7 @@
 '''
-Model Service module uses the ML models
+Model Inference Service module uses the built ML models
 
-The module contains the ModelService class which contains the features to load and use ml models,
+The module contains the ModelInferenceService class which contains the features to load and use ml models,
 last_thursday function to get the next last thurday of the month and
 next_thurday function to get coming thursday
 '''
@@ -24,14 +24,13 @@ from config.config import settings
 from model.pipeline.model import build_model
 
 
-class ModelService:
+class ModelInferenceService:
     '''
     A sevice class of managing ML models
 
     Methods:
     init - constructor to initialize objects and contains model, scaler and ticker info
-    load_model_and_scaler - it checks if model and scaler exist in the directory. If the model is not present, one is built
-    else the model and scalers are loaded
+    load_model_and_scaler - it loads model and scaler
     predict - forcasts the price either on a weekly or monthly basis
     '''
     
@@ -51,8 +50,7 @@ class ModelService:
         model_path = Path(f'{settings.model_path}/{settings.model_name}.keras')
         scaler_path = Path(f'{settings.model_path}/{settings.model_name}_scaler.joblib')
         if not model_path.exists() and not scaler_path.exists():
-            logger.warning('Model doesnt exist. Building new model')
-            build_model()
+            raise FileNotFoundError('Model file does not exist')
         logger.info('Model exists. Loading model and scaler')
         self.model=load_model(model_path)
         self.scaler=joblib.load(scaler_path)

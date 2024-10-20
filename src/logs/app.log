@@ -162,3 +162,24 @@
 2024-10-19 14:51:30.230 | INFO     | model.model_service:load_model_and_scaler:56 - Model exists. Loading model and scaler
 2024-10-19 14:51:30.584 | INFO     | model.model_service:predict:64 - Forecasting
 2024-10-19 14:51:32.013 | INFO     | __main__:main:25 - Expiry price: [23866.912]
+2024-10-20 20:55:08.962 | INFO     | model.model_inference:load_model_and_scaler:49 - Checking the existence of model config file at model\models/nifty50_lstm_v3.keras
+2024-10-20 20:55:08.962 | INFO     | model.model_inference:load_model_and_scaler:54 - Model exists. Loading model and scaler
+2024-10-20 20:55:09.102 | INFO     | model.model_inference:predict:62 - Forecasting
+2024-10-20 20:55:11.193 | INFO     | __main__:main:25 - Expiry price: [23884.871]
+2024-10-20 20:55:34.504 | INFO     | model.model_inference:load_model_and_scaler:49 - Checking the existence of model config file at model\models/nifty50_lstm_v33.keras
+2024-10-20 20:55:34.507 | ERROR    | __main__:<module>:28 - An error has been caught in function '<module>', process 'MainProcess' (28552), thread 'MainThread' (33556):
+Traceback (most recent call last):
+
+> File "C:\Users\vaibh\OneDrive\Documents\FNOT\src\runner_inference.py", line 28, in <module>
+    main()
+    └ <function main at 0x000001B744180EA0>
+
+  File "C:\Users\vaibh\OneDrive\Documents\FNOT\src\runner_inference.py", line 23, in main
+    ml_svc.load_model_and_scaler()
+    │      └ <function ModelInferenceService.load_model_and_scaler at 0x000001B71E3D3920>
+    └ <model.model_inference.ModelInferenceService object at 0x000001B71EE30050>
+
+  File "C:\Users\vaibh\OneDrive\Documents\FNOT\src\model\model_inference.py", line 53, in load_model_and_scaler
+    raise FileNotFoundError('Model file does not exist')
+
+FileNotFoundError: Model file does not exist
