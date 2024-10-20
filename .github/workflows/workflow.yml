@@ -38,4 +38,4 @@ jobs:
     
     - name: Install dependencies using poetry
       if: steps.cached-poetry-dependencies.outputs.cache-hit != 'true'
-      run:  C:\Users\runneradmin\AppData\Roaming\Python\Scripts\poetry install
+      run:  C:\Users\runneradmin\.local\bin\poetry install
