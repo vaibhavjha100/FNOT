@@ -25,8 +25,17 @@ jobs:
         python-version: '3.12.2'
     
     - name: Install poetry
-      run: curl -sSL https://install.python-poetry.org | python -
-      
+      run: snok/install-poetry@v1
+      with:
+        virtualenvs-in-project: true
+
+    - name: Load cached venv
+      uses: actions/cache@v4
+      id: cached-poetry dependencies
+      with:
+        path: /path/to/.venv
+        key: venv-${{runner.os}}-${{hashFiles('**/poetry.lock')}}
     
     - name: Install dependencies using poetry
+      if: steps.cached-poetry dependencies.outputs.cache-hit != 'true'
       run:  C:\Users\runneradmin\AppData\Roaming\Python\Scripts\poetry install
