@@ -1,4 +1,4 @@
-2024-11-01 15:36:41.937 | INFO     | model.model_inference:load_model_and_scaler:49 - Checking the existence of model config file at model\models/nifty50_lstm_v3.keras
-2024-11-01 15:36:41.951 | INFO     | model.model_inference:load_model_and_scaler:54 - Model exists. Loading model and scaler
-2024-11-01 15:36:42.611 | INFO     | model.model_inference:predict:62 - Forecasting
-2024-11-01 15:36:46.700 | INFO     | __main__:main:25 - Expiry price: [22896.375]
+2024-12-08 14:08:40.672 | INFO     | model.model_inference:load_model_and_scaler:49 - Checking the existence of model config file at model\models/nifty50_lstm_v3.keras
+2024-12-08 14:08:40.690 | INFO     | model.model_inference:load_model_and_scaler:54 - Model exists. Loading model and scaler
+2024-12-08 14:08:40.974 | INFO     | model.model_inference:predict:62 - Forecasting
+2024-12-08 14:08:42.591 | INFO     | __main__:main:25 - Expiry price: [24095.834]
